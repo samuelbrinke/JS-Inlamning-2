@@ -1,0 +1,43 @@
+body {
+    background-color: #290016;
+    color: white !important;
+}
+a {
+    color: #dc136c !important;
+}
+
+a:hover {
+    color: #a71054 !important;
+}
+
+.btn-outline-success {
+    color: #dc136c;
+    border-color: #dc136c;
+}
+
+.btn-outline-success:hover {
+    color: white;
+    background-color: #dc136c;
+    border-color: #dc136c;
+}
+
+.btn-outline-success:active {
+    color: white;
+    background-color: #dc136c;
+    border-color: #dc136c;
+}
+
+.btn-outline-success:focus {
+    box-shadow: 0 0 0 0.25rem #dc136c80;
+}
+
+.form-control {
+    background: none;
+}
+
+.form-control:focus {
+    background: none;
+    border-color: #dc136c;
+    box-shadow: 0 0 0 0.25rem #dc136c40;
+    color: white;
+}
