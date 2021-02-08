@@ -51,11 +51,29 @@
 			<input class="form-control input-value" type="text" placeholder="Sök plats, postnummer...">
 			<input type="submit" value="submit" class="button">
 		</div>
-		<div class="result">
-			<h3 class="city">STAD</h3>
-			<p class="day">DAG</p>
-			<p class="temp">TEMPERATUR</p>
-			<p class="cond">TILLSTÅND</p>
+		<div class="flex">
+			<div class="condition">
+				<div class="sunny"></div>
+				<div class="partly_cloudy">
+					<div class="partly_cloudy__sun"></div>
+					<div class="partly_cloudy__cloud"></div>
+				</div>
+				<div class="cloudy"></div>
+				<div class="rainy">
+					<div class="rainy__cloud"></div>
+					<div class="rainy__rain"></div>
+				</div>
+				<div class="snowy"></div>
+				<p class="cond"></p>
+			</div>
+
+			<div class="">
+				<div class="result">
+					<h3 class="city"></h3>
+					<p class="day"></p>
+					<p class="temp"></p>
+				</div>
+			</div>
 		</div>
 	</div>
 
