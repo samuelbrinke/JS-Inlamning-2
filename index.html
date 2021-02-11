@@ -47,11 +47,36 @@
 	</nav>
 
 	<div class="container">
-		<div class="search mt-5">
+		<div class="search mt-5" style="display: flex;">
 			<input class="form-control input-value" type="text" placeholder="Sök plats, postnummer...">
-			<input type="submit" value="submit" class="button">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					Dropdown button
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+					<li>
+						<div class="form-check form-switch">
+							<input id="weatherCB" class="form-check-input" type="checkbox">
+							<label class="form-check-label" for="weather">Only weather</label>
+						</div>
+					</li>
+					<li>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" id="attractions">
+							<label class="form-check-label" for="attractions">Only attractions</label>
+						</div>
+					</li>
+					<li>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" id="alphabet">
+							<label class="form-check-label" for="alphabet">Filter Alphabetically</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<input type="submit" value="submit" class="button btn btn-primary">
 		</div>
-		<div class="flex">
+		<div id="weather" class="flex">
 			<div class="condition">
 				<div class="sunny"></div>
 				<div class="partly_cloudy">
@@ -74,6 +99,11 @@
 					<p class="temp"></p>
 				</div>
 			</div>
+		</div>
+		<div class="foursquare">
+				<div class="row">
+
+				</div>
 		</div>
 	</div>
 
