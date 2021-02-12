@@ -94,18 +94,9 @@ button.addEventListener('click', function() {
 				let FS_IMG_URL = `https://api.foursquare.com/v2/venues/${VENUE_ID}/photos?client_id=${FS_CLIENT_ID}&client_secret=${FS_CLIENT_SECRET}&v=20200209`;
 				//console.log(FS_IMG_URL);
 				
-				// fetch(FS_IMG_URL)
-				// 	.then(response => response.json())
-				// 	.then(res => {
-				// 		//console.log(res);
-				// 		//let prefix = res['response']['photos']['items'][0]['prefix'];
-				// 		//let suffix = res['response']['photos']['items'][0]['suffix'];
-				// 		//let img = prefix + suffix;
-				// 		//console.log(img)
-				// 	});
 				let fsContainer = document.querySelector('.foursquare .row');
 				let fsColumn = document.createElement('div')
-				let img = document.createElement('img');
+				let fsImg = document.createElement('img');
 				let fsItemName = document.createElement('p');
 				let fsItemLocation = document.createElement('p');
 				let fsItemCity = document.createElement('p');
@@ -115,17 +106,28 @@ button.addEventListener('click', function() {
 				fsItemName.innerText = items[i]['venue']['name'];
 				fsItemLocation.innerText = items[i]['venue']['location']['address'];
 				fsItemCity.innerText = items[i]['venue']['location']['city'];
-				//let prefix = items[i]['venue']['categories'][0]['icon']['prefix'];
-				//let suffix = items[i]['venue']['categories'][0]['icon']['suffix'];
-				//img.src = prefix + suffix;
 
-				//console.log(tittle);
+
+				fetch(FS_IMG_URL)
+					.then(response => response.json())
+					.then(res => {
+						console.log(res);
+						let prefix = res['response']['photos']['items'][0]['prefix'];
+						let suffix = res['response']['photos']['items'][0]['suffix'];
+						let size = "400x400"
+						let img = prefix + size + suffix;
+						fsImg.src = img;
+						fsCard.appendChild(fsImg);
+						console.log(img)
+					})
+				.catch(err => console.log("something wrong"))
 				
 				fsContainer.appendChild(fsColumn);
 				fsColumn.appendChild(fsCard);
 				fsCard.appendChild(fsItemName);
 				fsCard.appendChild(fsItemLocation);
 				fsCard.appendChild(fsItemCity);
+
 			}
 
 
