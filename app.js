@@ -17,7 +17,10 @@ let API_KEY = "9be6078ffe0c3e65abbf2642f7429c1a"; // Open weather map API nyckel
 let FS_CLIENT_ID = "NJBPOFWW5BIH00SCYOGEF5QTWYZVXH1WXMNJKBWPT1TN2ULM"; //Foursquare client id
 let FS_CLIENT_SECRET = "NJSRW14LAU43JJLNTK55SVTDEZKQGENT2MANMHOMSNNG4XCS"; //foursquare client secret
 
-//Denna fetch skickar en förfrågan när sidan laddas in så det finns värden från start
+//Denna fetch skickar en förfrågan till APIet via fetch funktionen när sidan laddas in så det finns värden från start.
+// Först så skickar jag en get request till APIet med fetch funktionen, sedan gör om responsen till json och sedan
+// tar jag innehållet jag får från APIet och lägger in det i element från html dokumentet med att ta tag i html-elementet
+// med queryselector och ändrar innehållet till väderna jag får från APIet.
 fetch(`http://api.openweathermap.org/data/2.5/weather?q=Västerås&units=metric&appid=${API_KEY}`)
   .then(response => response.json()) // Gör om resposnen till json format.
   .then(data => {
