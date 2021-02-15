@@ -2,24 +2,21 @@ p {
     margin: 0;
 }
 
-.card {
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-    border: none;
-    margin-bottom: 1.5rem;
-    padding: 20px;
-}
-
 .show {
     display: block !important;
 }
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .flex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#weather {
+    margin-top: 30px;
 }
 
 .condition {
@@ -34,10 +31,31 @@ p {
     margin-top: 10px;
 }
 
+.foursquare {
+    margin-top: 50px;
+}
+
+.card {
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    border: none;
+    margin-bottom: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card .fs-img-col img {
+    width: 100%;
+}
+
+.card .fs-info-col {
+    margin: 20px;
+}
+
 .sunny {
     position: relative;
     width: 7rem;
     height: 7rem;
+    margin: auto;
     display: none;
 }
 .sunny:before, .partly_cloudy__sun:before {
@@ -68,6 +86,7 @@ p {
     position: relative;
     width: 7rem;
     height: 7rem;
+    margin: auto;
     display: none;
 }
 .cloudy:before, .partly_cloudy__cloud:before, .rainy__cloud:before, .thundery__cloud:before {
@@ -102,6 +121,7 @@ p {
     position: relative;
     width: 7rem;
     height: 7rem;
+    margin: auto;
     display: none;
 }
 .partly_cloudy__sun {
@@ -119,11 +139,17 @@ p {
     will-change: transform;
     animation: translateUp 2s linear infinite alternate;
 }
+.rainy {
+    display: none;
+}
+.thundery {
+    display: none;
+}
 .rainy, .thundery {
     position: relative;
     width: 7rem;
     height: 7rem;
-    display: none;
+    margin: auto;
 }
 .rainy__cloud, .thundery__cloud {
     position: absolute;
